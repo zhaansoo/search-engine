@@ -10,14 +10,7 @@ import java.util.Optional;
 
 @Repository
 public interface SiteRepository extends JpaRepository<Site, Integer> {
-    List<Site> findByNameIn(List<String> names);
     Optional<Site> findByName(String name);
     List<Site> findByNameInAndStatus(List<String> names, SiteStatus status);
-
     boolean existsByStatus(SiteStatus status);
-    boolean existsByStatusIn(List<SiteStatus> status);
-    boolean existsByStatusAndName(SiteStatus status, String name);
-    boolean existsByStatusAndNameIn(SiteStatus status, List<String> name);
-    boolean existsByUrl(String url);
-
 }

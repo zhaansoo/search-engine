@@ -25,14 +25,10 @@ import java.util.Random;
 @RequiredArgsConstructor
 public class StatisticsServiceImpl implements StatisticsService {
 
-    private final Random random = new Random();
     private final SitesList sites;
-    @Autowired
-    SiteRepository siteRepository;
-    @Autowired
-    PageRepository pageRepository;
-    @Autowired
-    LemmaRepository lemmaRepository;
+    private final SiteRepository siteRepository;
+    private final PageRepository pageRepository;
+    private final LemmaRepository lemmaRepository;
 
     @Override
     public StatisticsResponse getStatistics() {
